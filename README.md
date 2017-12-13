@@ -1,2 +1,3 @@
-# frontend-funny-demo
-前端demo
+
+## funny code demo
+
