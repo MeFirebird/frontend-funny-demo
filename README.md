@@ -1,5 +1,5 @@
 
-## funny code demo
+## funny code demos
 
 ### For relaxing time only   
 
