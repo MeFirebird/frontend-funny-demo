@@ -1,0 +1,87 @@
+
+
+
+项目学习报告：
+
+1.api的封装方式： （就一个网络请求啊，真没什么的）
+a：接口配置放到数组对象中维护
+b：可以放置到json中
+
+2.index.js:  导出一个文件夹啊！    node的模块管理方式
+
+3.eslint disable： 几种方式    这个要去写一个总结啦！
+
+4.websocket的使用啊    结合项目
+
+5.node常用的对象：
+a: process   path   webpack用到的
+b：
+
+6.dispatch action返回的promise对象
+
+7.vue指令的封装       自己试着去封装一下喽，真不难啊
+
+8.transition过度效果的玩耍
+
+9.mixin   混入   （结合extends）  这个语法很好的哦！
+
+10.Array.isArray
+
+11.组件引入的异步加载啊     require.ensure   动态import都可以的啊
+
+12.路由钩子啊： 做登陆状态的判断      next(to)
+
+13.模块的导入：从node_modules中导入的功能
+
+14.websocketio库     websocket的使用：阮一峰的教程啊
+
+15.lodash库的使用啊
+
+16.将全局对象和全局方法注册到Vue原型上
+
+17.pathToRegxp   npm包实践啊
+
+18.Array.isArray  与  instanceOf
+
+19.对象的数组表现形式啊   a[name]   a[age]
+
+20.axios的使用啊   多练习吧！
+
+21.big.js进行数值计算
+
+22.transition
+
+23.函数参数的默认值   解构赋值
+
+24.call   apply   bind
+
+25.改变this的指向方式
+
+26.模块的导入导出的方式啊    这个需要巩固之
+
+
+正则是你的薄弱点啊，这一点一定要好好突破一下了啊！
+
+
+疑问点：
+1.模块的导入导出：es6    模块化语法的深入理解
+2.sass： 语法点的使用啊， 要去练练了，都忘了
+3.util方法的总结啊
+4.vue生命周期的钩子函数啊
+5.async嵌套了promise
+6.vue-router的灵活扩展啊！  这个官网文档一定要刷熟练了啊
+7.instanceOf   typeof
+
+
+发现：
+1.es6的书籍啊，要去多看啊！  你这里真的很有差距的哦！
+2.你不知道的javascript书啊
+3.自己的项目啊    都需要抓紧了啊   时间就是一切啊
+4.数组的常用方法    对象的常用方法
+5.项目的正则啊！
+6.浏览器控制器的研究啊！   debug  然后是其他，一定要把google浏览器玩熟练啊   写博客   看自己的博客啦
+7.立即执行函数   惰性函数
+
+8.webpack的文档啊
+
+9.cloc工具：代码统计工具啊 （以后一个项目over以后就用这个打一个tag啊）   github好好经营啊

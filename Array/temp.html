@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    var a = [1, 2, 3]
+    var b = a.map(function(item,index,arr){
+        return arr[index] = item + 1      // map方法要有返回值
+    })
+    console.log(a)  // a调用了map方法，所以变异了
+    console.log(b)
+
+</script>
+
+</body>
+</html>

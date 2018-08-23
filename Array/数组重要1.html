@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /**
+     * 一： 数组删除  splice()
+     */
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.splice(2, 0, "Lemon", "Kiwi");
+    console.log(fruits)  // Banana,Orange,Lemon,Kiwi,Apple,Mango   在数组的第2位置添加两个个元素
+
+    /**
+     * 二：Array.of()  将一组值转为数组：弥补数组构造函数Array()
+     */
+    Array.of() // []
+    Array.of(undefined) // [undefined]
+    Array.of(1) // [1]
+    Array.of(1, 2) // [1, 2]
+    // 实现
+    function ArrayOf() {
+        return [].slice.call(arguments);
+    }
+
+    /**
+     * 三：copyWithin(target,start,end)      在当前数组内部，将指定位置的成员复制到其他位置
+     */
+
+
+    /**
+     * 四： find(f,obj) 和 findIndex(f,obj)   // obj用来绑定this的指向
+     */
+    let result = [1, 4, -5, 10].find((n) => n < 0)   // 返回第一个符合条件的元素  没有：undefined
+
+    let result1 = [1, 5, 10, 15].find(function (value, index, arr) {
+        return value > 9;
+    })                      // 10
+
+    let index = [1, 5, 10, 15].findIndex(function (value, index, arr) {    // 返回第一个符合条件的数组成员的位置
+        return value > 9;
+    }) // 2
+
+    function f(v) {
+        return v > this.age;
+    }
+
+    let person = {name: 'John', age: 20};
+    [10, 12, 26, 15].find(f, person);    // 26
+
+
+    /**
+     *  五：entries()，keys()和values()   （键名  键值  键值对的遍历） 返回一个遍历器对象
+     */
+    for (let index of ['a', 'b'].keys()) {
+        console.log(index);
+    }
+    // 0
+    // 1
+
+    for (let elem of ['a', 'b'].values()) {
+        console.log(elem);
+    }
+    // 'a'
+    // 'b'
+
+    for (let [index, elem] of ['a', 'b'].entries()) {
+        console.log(index, elem);
+    }
+    // 0 "a"
+    // 1 "b"
+
+    /**
+     * 六：includes()   indexOf的替代品
+     */
+        [1, 2, 3].includes(2)     // true
+        [1, 2, 3].includes(4)     // false
+        [1, 2, NaN].includes(NaN) // true
+
+
+</script>
+
+</body>
+</html>

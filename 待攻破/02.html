@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+
+    /**
+     *  ES5的写法
+     */
+    function Point(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    Point.prototype.toString = function () {
+        return '(' + this.x + ',' + this.y + ')'
+    }
+    var p = new Point(1, 2)
+
+    /**
+     *  ES6的写法
+     */
+    class Point {
+        constructor(x, y) {     // es5的构造函数对应es6的Point类的constructor方法
+            this.x = x;
+            this.y = y;
+        }
+
+        toString() {
+            return '(' + this.x + ',' + this.y + ')'
+        }
+    }
+
+
+    /**
+     *
+     */
+    class Foo {
+        constructor(...args) {   // 类数组对象:args
+            this.args = args;
+        }
+
+        * [Symbol.iterator]() {
+            for (let arg of this.args) {
+                yield arg;
+            }
+        }
+    }
+
+    for (let x of new Foo('hello', 'world')) {
+        console.log(x)
+    }
+
+    /**
+     *
+     */
+    class A {
+    }
+
+    class B extends A {
+        constructor() {
+            super()    // super相当于 A.prototype.constructor.call(this)     super作为函数
+        }
+    }
+
+
+    /**
+     * typeof： 返回字符串， number  string   boolean   object(对象  数组  null)   function    undefined   symbol
+     *
+     */
+
+    /**
+     * 判断数组：使用Array.isArray或者Object.prototype.toString.call方法可以从基本的对象中区分出数组类型
+     */
+
+    /**
+     * instanceOf  instanceof: 判断是否是某个对象的实例
+     */
+
+
+
+
+
+    /**
+     * demo01    私有方法
+     */
+    console.log(this)    // window
+    class Widget {
+        foo(baz) {
+            debugger
+            bar.call(this, baz)  // this指向class的实例
+            console.log(this)
+        }
+    }
+    function bar(baz) {
+        this.snaf = baz     // this指向class的实例    为class实例添加一个属性
+        console.log(this.snaf)
+    }
+
+    let p = new Widget()
+    console.log('p', p)
+    p.foo('sandy')
+
+    /**
+     * demo02    私有方法
+     */
+    const bar = Symbol('bar')
+    const snaf = Symbol('snaf')
+
+    export default class myClass{
+        // 公有方法
+        foo(baz){
+            this[bar](baz);  // this[bar]: 方法名
+        }
+        // 私有方法
+        [bar](baz){
+            return this[snaf] = baz;
+        }
+    }
+
+
+    /**
+     *   子类的__proto__属性： 指向父类
+     *   子类的prototype属性的__proto__属性： 指向父类的prototype属性
+     */
+    class A{
+
+    }
+    class B extends A{
+
+    }
+    console.log(B.__prototype__ === A)
+    console.log(B.prototype.__proto__) === A.prototype
+
+    Object.setPrototypeOf = function(obj, proto){
+        obj.__proto__ = proto
+        return obj
+    }
+    Object.setPrototypeOf(B.prototype, A.prototype)
+
+
+
+
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // 去空格   前导空白  尾导空白
+    if(!String.prototype.trim){
+        String.prototype.trim = function(){
+            return this.replace(/^\s+|\s+$/g, '')   // 以空格开头  或者以空格结尾
+        }
+    }
+    /**
+     * 1. \s: 匹配任何空白字符
+     * 2. +： 匹配前面的子表达式一次或者多次
+     * 3. |： 或者
+     */
+
+
+    // 去掉所有的空格
+    if(!String.prototype.trimAll){
+        String.prototype.trimAll = function(){
+            return this.replace(/\s+/g, "")
+        }
+    }
+    /**
+     * /: 顺斜杠，定界符， 表达式的开头和结尾
+     */
+
+
+
+    /**
+     * 千分位 加一个逗号啊
+     */
+    const formatThousand = (num) => {
+        if(num === undefined || num === null) return ''
+        let source = String(num).split(".")
+        source[0] = source[0].replace(new RegExp('(\\d)(?=(\\d{3})+$)', 'ig'), "$1,")
+        let tempResult = ''
+        tempResult = source.join(".")
+        return tempResult
+    }
+
+
+
+    /**
+     *   字符串转驼峰
+     */
+
+    function toLowerCase(string,type){
+        let arr = string.split(''),    // split的参数  "" , ' ' ,''
+            tempArr = string.split(''),
+            _type = type || '-',
+            name = ''
+        for(let i=0; i < tempArr.length; i++){
+            if(/[A-Z]/.test(tempArr[i]) && i > 0){
+                arr.splice(i,0,_type)
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

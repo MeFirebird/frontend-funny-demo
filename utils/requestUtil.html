@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    /**
+     *  请求封装函数:  二次封装
+     */
+    import request from 'apis/'
+
+    let plugins = {}
+    for (let i = 0; i < request.length; i++) {
+        if (typeof request[i] === 'object' && request[i].list && Array.isArray(request[i].list)) {
+            for (let j = 0; j < request[i].list.length; j++) {
+                plugins['api_' + request[i].module + "_" + request[i].list[j].method] = (function (n, m) {
+                    return function ({
+                                         // 这里的n m直接用i j不可以吗？  console一下就知道啦
+                                         type = request[n].list[m].type,    // 函数参数的默认值
+                                         path = request[n].list[m].path,
+                                         download = request[n].list[m].download,
+                                         resCode = request.list[m].resCode,
+                                         data,
+                                         fn,
+                                         errFn,
+                                         headers,
+                                         opts,
+                                         restParam = {}
+                                     } = {}) {            // 解构赋值默认值
+                        const generatePath = pathToRegexp.compile(path)
+                        path = generatePath(restParam)
+                        ajax.call(this, {     // 调用封装的ajax请求
+                            type,
+                            path,
+                            data,
+                            resCode,
+                            fn,
+                            download,
+                            errFn,
+                            headers,
+                            opts
+                        })
+                    }
+                })(i, j)
+            }
+        }
+    }
+
+
+    /**
+     * 1.Array.isArray
+     */
+</script>
+</body>
+</html>

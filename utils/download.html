@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /**
+     * 文件下载
+     */
+    let aLink = document.createElement('a')
+    let blob = new Blob([res.data])
+    aLink.style.display = 'none'
+    aLink.download = 'fileName'
+    aLink.href = URL.createObjectURL(blob)
+
+    document.body.appendChild(aLink)
+    aLink.click()
+    document.body.removeChild(aLink)
+</script>
+
+</body>
+</html>

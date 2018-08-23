@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /**
+     *  1.通用日志方法    然后引入或者绑定到全局vue实例就可以使用啦
+     */
+    function log() {
+        return log = console.log.bind(console)  //  在console方法上面绑定console.log方法  bind方法是接受传参的
+    }
+
+    /**
+     * 扩展点：
+     * 1.color颜色的支持啊
+     * 2.多组打印
+     * 3.logError   logInfo  logDebug
+     */
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

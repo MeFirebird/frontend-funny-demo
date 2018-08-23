@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<script>
+    /**
+     * forEach()   数组遍历
+     */
+    var data = [1, 2, 3, 4, 5]
+    var sum = 0;
+    data.forEach(function (item, index, arr) {
+        arr[index] = item + 1
+    })
+    console.log(data)
+
+
+    /**
+     * map()   非变异方法
+     */
+    var a = [1, 2, 3]
+    var b = a.map(function(item,index,arr){
+        return arr[index] = item + 1     // map方法要有返回值
+    })
+    console.log(a)  // a调用了map方法，所以变异了
+    console.log(b)
+
+
+    /**
+     * filter()   方便对数组中每一个元素做逻辑判定
+     */
+    var a = [5,4,3,2]
+    var s = a.filter(function(x){ return x < 3})
+    console.log(s)
+
+    /**
+     * every()  some()    逻辑判定
+     */
+    var a = [1,2,3,4,5]
+    let booleanValue = a.every(function(x){ return x < 3})   // 是否所有的item都小于3  false
+    let booleanValue1 = a.some(function(x){ return x < 3 })
+    console.log(booleanValue)
+    console.log(booleanValue1)
+
+
+    /**
+     * reduce()   reduceRight()
+     */
+    /**
+     *  reduce应用：对象数组去重
+     */
+    function hello(){
+        let person = [
+            {id: 0, name: "小明"},
+            {id: 1, name: "小张"},
+            {id: 1, name: "小张"},
+            {id: 2, name: "小李"},
+            {id: 3, name: "小孙"},
+            {id: 1, name: "小周"},
+            {id: 2, name: "小陈"},
+        ];
+        let obj = {};
+
+        /**第一个参数：方法(cur,next,index,arr)
+         * cur: 上一次回调的返回值或者初始值
+         * next:当前正在处理的数组元素
+         * index:当前正在处理的数组元素的下标
+         * arr: 调用reduce方法的数组
+         * @type {*|Array}
+         * 第二个参数：用于指定第一个参数(方法)的cur 类型和初始值       设置初始值  和  不设置初始值的区别
+         *
+         */
+        person = person.reduce((cur,next,index,arr) => {
+            console.log('index',index)
+            console.log('arr', arr)
+            console.log('next', next)
+            console.log('obj',obj)
+            debugger
+            obj[next.id] ? "" : obj[next.id] = true && cur.push(next);
+            return cur;
+        },[]) //设置cur默认类型为数组，并且初始值为空的数组
+    }
+
+
+    /**
+     *
+     */
+
+</script>
+
+
+<script>
+
+</script>
+
+
+</body>
+</html>

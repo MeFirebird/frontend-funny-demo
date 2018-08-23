@@ -1,0 +1,74 @@
+
+
+
+
+1.深拷贝
+
+1.promise的状态会凝固
+2.promise内部的错误不会被外边感知
+3.then() catch()返回的还是promise对象
+4.promise.finally()  都会执行
+5.thenable对象  具有then方法的对象
+6.promise.try()
+
+setTimeout(function(){
+console.log('three')    // 下一轮事件循环的开始执行
+},0)
+
+Promise.resolve().then(function(){     // 本轮事件的结束执行
+console.log('two')
+});
+
+console.log('one')      // 同步立即执行
+
+
+二：
+1.字符串：类数组对象  具有iterator接口
+2.遍历器对象的next方法  return方法  throw方法
+3.for  forEach   for...in(遍历对象)   for...of
+
+
+三：
+1.generator：遍历器对象生成函数   状态机
+2.*  yield
+
+
+
+
+
+四：补充
+1.void 0 === undefined (减少字节  防止在非严格模式下被重写)
+
+
+
+
+五：javascript运行机制  EventLoop     这幅图心里要有数啊：画的出来
+1.主线程   任务队列：异步任务有了运行结果，触发此异步任务绑定的事件
+2.任务队列(事件队列  消息队列)   队列：FIFO
+3.事件循环：主线程从任务队列中读取事件  Event loop
+
+  异步任务   定时任务
+
+六：阮一峰的博客啊  cookie  localStorage   indexDB
+
+七: 二进制数据： ArrayBuffer对象   Blob对象
+
+八：this指向运行时所在的对象
+
+九：传值调用  传名调用
+
+
+
+
+二： 解决this的指向问题： 不让this指向运行时所在的环境
+
+1.构造方法中绑定this
+2.箭头函数
+3.Proxy
+
+
+
+
+http://www.cnblogs.com/leaf930814/p/6718595.html
+
+http://www.cnblogs.com/leaf930814/p/6854628.html

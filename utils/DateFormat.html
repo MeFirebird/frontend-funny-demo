@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<script>
+    // new Date().Format()   函数没有提升啊 不能在这里调用啊
+    // 日期格式化
+
+    /**
+     *  1.正则匹配啊: 字符串执行模式匹配
+     *  new RegExp(pattern, attributes)   pattern：正则字符串   attributes：修饰符(g:全局匹配 i：区分大小写匹配   m：多行匹配)      返回值：一个新的Regexp对象
+     *
+     *  修饰符
+     *  方括号
+     *  元字符
+     *  量词
+     * @param fmt
+     * @returns {*}
+     * @constructor
+     */
+    Date.prototype.Format = function(fmt){
+        debugger
+        let o = {
+            "y+": this.getFullYear(),    // this指向当前的Date对象    2018
+            "M+": this.getMonth() + 1,
+            "d+": this.getDate(),
+            "h+": this.getHours(),
+            "m+": this.getMinutes(),
+            "s+": this.getSeconds(),
+            "q+": Math.floor((this.getMonth() + 3) /3),  // 季度
+            "S+": this.getMilliseconds()   // 毫秒
+        }
+        console.log(o)
+        for(let k in o){
+            // 匹配8个子表达式
+            if(new RegExp("(" + k + ")").test(fmt)){      //  +：匹配前面的子表达式一次或者多次
+                if(k === "y+"){
+                    fmt = fmt.replace(RegExp.$1, ("" + o[k]).substr(4 - RegExp.$1.length))   // 模板值的替换     yyyy替换为值
+                }else if(k === "S+"){
+                    let lens = RegExp.$1.length
+                    lens = lens === 1 ? 3 : lens
+                    fmt = fmt.replace(RegExp.$1, ("00" + o[k]).substr(("" + o[k]).length - 1, lens))
+                }else{
+                    fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)))
+                }
+            }
+        }
+        return fmt
+    }
+
+    let date = new Date().Format("yyyy-mm-dd")
+    console.log(date)
+</script>
+
+
+<script>
+
+</script>
+</body>
+</html>

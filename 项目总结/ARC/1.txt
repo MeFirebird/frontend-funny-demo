@@ -1,0 +1,55 @@
+
+
+数组的通用方法  some  filter  map  reduce  数组去重
+
+localStorage的get  set   remove
+
+
+1.router的钩子： next()
+2.css样式： 不用scoped的， 自己在组件根元素加样式class即可（手动隔离区块）
+3.eBus： emit  on    events up！  组件的通信这里：以及通信时候的padload
+4.es6的模板字符串直接写html啊 css啊啥的 绑定值啊啥的！
+5.前端模块化：js库以模块的方式维护引入
+6.this.$set     this.$delete   根据状态来对当前组件的data中的某一个对象做处理啊：添加新属性，删除属性啥的
+7.resize方法：响应式编程啊
+8.原生js的使用啊    获取窗口的宽度高度啥的
+9.parseInt   数据类型的转换    toFixed()
+10.刷新当前路由： locaton.reload()
+11.dom的属性：scrollHeight
+12.写法： || 与  &&     a['test'] && this.fileList = a['test']  以及短路与：函数参数的默认值设置      简化if语句啊
+13.时间戳的妙用    防止dom复用？
+
+
+
+
+自我的不足：
+1.element的组件：
+  a：table组件这个不够熟练啊
+2.echarts  highcharts的使用不够熟练啊    好久没用了
+3.工作交流的主动性要提高
+
+
+
+方法论：
+1.脚踏实地是最快的！  一天一天一点点的去看，没那么的难！ 打boss是需要耐心的，持久战啊！
+
+
+整理学习总结：
+
+1.https://www.jianshu.com/p/3e482748369d?from=groupmessage    setTimeout的理解
+  js事件队列的理解啊！    执行顺序的问题（本轮的同步代码  promise   setTimeout  setInterval）
+  是在本轮“事件循环”（event loop）的结束时，而不是在下一轮“事件循环”的开始时。
+
+2.http://www.cnblogs.com/leaf930814/p/6842257.html
+
+http://www.ruanyifeng.com/blog/2014/10/event-loop.html
+
+
+
+
+es6：整理总结到github
+
+项目的bug
+
+项目的代码的深刻理解和巩固吧
+

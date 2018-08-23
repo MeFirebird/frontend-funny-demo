@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    /**
+     *  合并对象
+     */
+    function mergeManyObjToOneObj(obj){
+        var newObj = {}
+        if(obj && typeof obj === 'object'){
+            for(let f in obj){
+                if(typeof obj[f] === 'function'){
+                    newObj[f] = obj[f]
+                }
+                if(typeof obj[f] === 'object'){
+                    Object.assign(newObj, mergeManyObjToOneObj(obj[f]))
+                }
+            }
+        }
+        return newObj
+    }
+</script>
+</body>
+</html>

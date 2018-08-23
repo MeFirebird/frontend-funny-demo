@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /**
+     * 一：创建数组的方式
+     *
+    */
+    // 方式一:
+    var myCars = new Array();
+    myCars[0]="Saab";
+    myCars[1]="Volvo";
+    myCars[2]="BMW";
+    // 方式二：
+    var myCars=new Array("Saab","Volvo","BMW");
+    // 方式三：
+    var myCars=["Saab","Volvo","BMW"];
+
+
+    /**
+     *  二： 数组中的元素数据类型可以不一样  js独有吗？
+     *
+     */
+    var myArray = []
+    myArray[0]=Date.now;
+    myArray[1]=myFunction;
+    myArray[2]=myCars;
+
+
+
+    /**
+     * 三： 合并数组  concat()
+     */
+    var hege = ["Cecilie", "Lone"];
+    var stale = ["Emil", "Tobias", "Linus"];
+    var children = hege.concat(stale);
+
+
+    var parents = ["Jani", "Tove"];
+    var brothers = ["Stale", "Kai Jim", "Borge"];
+    var children = ["Cecilie", "Lone"];
+    var family = parents.concat(brothers, children);     // 合并多个数组
+
+    /**
+     *  四：数组转字符串 join()      字符串----》数组：split(separator,howmany)
+     */
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    var x=document.getElementById("demo");
+    x.innerHTML=fruits.join();   // 转字符串  连接格式自定义
+
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    var str = fruits.toString();   // 转字符串    连接格式： 逗号
+
+
+
+    /**
+     * 五：数组的栈操作    出栈： pop()    入栈：push()
+     */
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.pop();   // 删除数组的最后一个元素
+    console.log(fruits)
+    fruits.push("Kiwi")  // 数组的末尾添加新的元素
+    console.log(fruits)
+
+    fruits.reverse();   // 反转数组，倒叙
+
+
+    /**
+     * 六: 数组的队列操作   入队：unshift()    出队：shift()
+     */
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    var delell = fruits.shift();  // 删除数组的第一个元素
+    fruits.unshift("Lemon","Pineapple");  // 在数组的开头添加元素
+
+
+    /**
+     * 七：数组裁剪  slice()
+     */
+    var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+    var citrus = fruits.slice(1,3);   // 索引1到3，开区间
+
+
+    /**
+     * 八：数组排序  sort()
+     */
+    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+    fruits.sort();  // 升序排列
+
+    var points = [40,100,1,5,25,10];
+    points.sort(function(a,b){return a-b});   // 数字降序排列
+    var points = [40,100,1,5,25,10];
+    points.sort(function(a,b){return b-a});   // 数字升序排序
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

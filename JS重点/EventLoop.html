@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+模拟多线程，靠的就是Event Loop。
+
+输出的永远是1, 3, 2, 也就是说 promise 在 setTimeout 之前执行了。这是因为 异步任务 分为 微任务(microtask) 和 宏任务(task)，
+执行的顺序是 执行栈中的代码 => 微任务 => 宏任务。
+
+微任务(microtask): promise MutationObserver...
+宏任务(task): setTimeout setInterval setImmediate(IE专用) messageChannel...
+
+基本数据类型的特点：直接存储在栈(stack)中的数据
+对象数据类型的特点：存储的是该对象在栈中引用，真实的数据存放在堆内存里
+
+浅拷贝只复制指向某个对象的指针，而不复制对象本身，新旧对象还是共享同一块内存。但深拷贝会另外创造一个一模一样的对象，新对象跟原对象不共享内存，
+修改新对象不会改到原对象。
+
+
+疑问点：
+1.异步与阻塞的关系？     如何写异步非阻塞的代码
+2.发布订阅模式？   观察者模式？
+
+
+
+
+
+
+
+
+</body>
+</html>

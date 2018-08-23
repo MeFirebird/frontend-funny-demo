@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+
+    /**
+     * 写法一
+     */
+    const f = () => console.log('now');
+    (async () => f())();
+    console.log('next');
+    // now
+    // next
+
+    /**
+     * 写法二
+     */
+    const f = () => console.log('now');
+    (
+        () => new Promise(
+            resolve => resolve(f())
+        )
+    )();
+    console.log('next');
+    // now
+    // next
+
+
+    /**
+     * 几种循环：
+     * 1.for...in   遍历对象
+     * 2.forEach()
+     * 3.map
+     * 4.for...of   与for...in的异同
+     */
+
+
+
+    /***
+     * 1.Object.keys()
+     * 2.Object.getOwnPropertyNames()
+     * 3.Object.create(null);
+     * 4.hasOwnProperty
+     * 5.与 ES5 一样，类的所有实例共享一个原型对象。  p1.__proto__ === p2.__proto__
+     */
+
+
+
+
+
+
+
+    /**
+     * 当下：
+     *      class     模块这里       然后重点突破了哦！ 博客了哦       拖地  洗衣服     给妈妈打电话  做饭
+     */
+
+
+    吃饭    自行车     看有哪些是需要给大哥的？
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
